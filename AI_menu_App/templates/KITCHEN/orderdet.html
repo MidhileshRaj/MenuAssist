@@ -1,0 +1,30 @@
+{% extends 'KITCHEN/kitchen_index.html' %}
+{% block body %}
+{# ORDER SUB #}
+
+<form action="/app/search_k_orderdet/" method="post">
+{% csrf_token %}
+
+
+<table class="table table-bordered table-hover">
+
+
+    <tr>
+        <th>Amount</th>
+        <td>{{ pay.total_amount }}</td>
+    </tr>
+    <tr>
+        <th>Account Number</th>
+        <td>{{ pay.account_number }}</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>{{ pay.status }}</td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td>{{ pay.date }}</td>
+    </tr>
+</table>
+</form>
+{% endblock %}

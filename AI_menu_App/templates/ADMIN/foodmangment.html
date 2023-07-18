@@ -1,0 +1,46 @@
+{% extends 'ADMIN/admin_index.html' %}
+{% block body %}
+<form action="/app/add_food_post/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-striped table-hover">
+  <tr>
+    <td width="139">Food Name:</td>
+    <td width="341"><input name="food" type="text" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Image:</td>
+    <td><input name="img" type="file" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Category:</td>
+    <td><select name="category" class="form-control" required>
+      <option value="veg">Veg</option>
+      <option value="non veg">Non veg</option>
+      <option value="cool drinks">Cool drinks</option>
+      <option value="snacks">Snacks</option>
+      <option value="hot drinks">Hot drinks</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td>Discription:</td>
+     <td><textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+  </tr>
+  <tr>
+    <td>Price:</td>
+    <td>
+      <input type="text" name="textfield" id="textfield" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>Stock:</td>
+    <td>
+      <input type="text" name="textfield2" id="textfield2" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div align="center">
+      <input type="submit" name="button" id="button" value="Add" class="btn btn-success" />
+    </div></td>
+    </tr>
+</table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'CASHIER/cashier_index.html' %}
+{% block body %}
+<form action="/app/cashier_billing/" method="post">
+<table class="table table-striped table-hover">
+  <tr>
+    <td width="19">sl no</td>
+    <td width="91">Time/Date</td>
+    <td width="186">Customer information</td>
+    <td width="98">Total amout</td>
+    <td width="58">Status</td>
+{#      <td></td>#}
+    
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.date }}&nbsp;</td>
+    <td>&nbsp;{{ i.LOGIN.cust_name }}</td>
+    <td>{{ i.total_amount }}&nbsp;</td>
+     <td>{{ i.status }}</td>
+{#    <td><a href="/app/more_billing/{{ i.LOGIN_id }}#ab">more...</a></td>#}
+
+  </tr>
+    {% endfor %}
+
+</table>
+
+</form>
+{% endblock %}

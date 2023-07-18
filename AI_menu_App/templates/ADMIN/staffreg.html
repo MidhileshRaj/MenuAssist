@@ -1,0 +1,56 @@
+
+{% extends 'ADMIN/admin_index.html' %}
+{% block body %}
+<form action="/app/add_staff_post/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-striped table-hover">
+  <tr>
+    <td width="108">User name</td>
+    <td width="381"><input name="name" type="text" class="form-control" required/></td>
+  </tr>
+ 
+  <tr>
+    <td>Image</td>
+    <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Phone No</td>
+    <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>DOB</td>
+    <td><label for="textfield2"></label>
+      <input type="date" name="textfield2" id="textfield2" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td>
+      <input type="textfield" name="textfield4" id="textfield4" class="form-control" required /></td>
+  </tr>
+    <tr>
+    <td width="108">Post</td>
+    <td width="381"><input name="post" type="text" class="form-control" required/></td>
+  </tr>
+    <tr>
+    <td width="108">District</td>
+    <td width="381"><input name="district" type="text" class="form-control" required/></td>
+  </tr>
+    <tr>
+    <td width="108">Pincode</td>
+    <td width="381"><input name="pin" type="text"class="form-control" required/></td>
+  </tr>
+  <tr>
+  <td colspan="2"><div align="center">
+    <input name="" type="submit" class="btn btn-success"/>
+  </div></td>
+  </tr>
+</table>
+</form>
+{% endblock %}

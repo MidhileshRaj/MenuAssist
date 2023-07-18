@@ -1,0 +1,23 @@
+{% extends 'ADMIN/admin_index.html' %}
+{% block body %}
+<form action="/app/edit_tableno_post/" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="id" value="{{ data.id }}">
+<table class="table table-striped table-hover">
+  <tr>
+    <td width="83">Table no:</td>
+    <td width="193">
+      <input type="text" name="textfield" value="{{ data.table_no }}" id="textfield" class="form-control" required/></td>
+  </tr>
+  <tr>
+  <tr>
+     <th>No Of Seats</th>
+     <td><input type="text" name="seat" value="{{ data.no_of_seats }}" class="form-control" required/></td>
+  </tr>
+    <td colspan="2"><div align="center">
+      <input name="" type="submit" value="Submit" class="btn btn-success"/>
+    </div></td>
+    </tr>
+</table>
+</form>
+{% endblock %}

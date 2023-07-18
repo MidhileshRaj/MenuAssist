@@ -1,0 +1,30 @@
+{% extends 'SERVICE STATION/service_index.html' %}
+{% block body %}
+<form action="/app/service_station_bill/" method="post">
+<table class="table table-striped table-hover">
+  <tr>
+    <td width="22">sl no</td>
+    <td width="97">Time/Date</td>
+    <td width="90">Table no</td>
+    <td width="157">Customer name</td>
+{#    <td width="101">Food name</td>#}
+{#    <td width="46">price </td>#}
+{#    <td width="66">Quantity</td>#}
+    <td width="74">Total Amount</td>
+    <td> </td>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.date }}</td>
+    <td>&nbsp;{{ i.TABLE.table_no }}</td>
+    <td>&nbsp;{{ i.USER.cust_name }}</td>
+    <td>{{ i.total_amount}}</td>
+
+
+    <td><a href="/app/s_view_more/{{ i.id }}#ab"> View more...</a></td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+{% endblock %}

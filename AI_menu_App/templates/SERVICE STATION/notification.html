@@ -1,0 +1,27 @@
+{% extends 'SERVICE STATION/service_index.html' %}
+{% block body %}
+<form action="" method="get">
+<table class="table table-striped table-hover">
+  <tr>
+    <td width="19">sl no</td>
+    <td width="74">table no</td>
+    <td width="82">food name</td>
+    <td width="73">date/time</td>
+    <td width="81">quantity</td>
+  </tr>
+
+    {% for i in data %}
+
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.os_id.ORDER_MAIN.TABLE.table_no }}</td>
+    <td>{{ i.os_id.food_id.food_item }}</td>
+    <td>{{ i.os_id.ORDER_MAIN.date }} <br> {{ i.os_id.ORDER_MAIN.time }} </td>
+    <td>{{ i.os_id.quantity }}</td>
+  </tr>
+
+    {% endfor %}
+</table>
+
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+
+{% extends 'SERVICE STATION/service_index.html' %}
+{% block body %}
+<table class="table table-srtiped table-hover">
+  <tr>
+    <td>sl no</td>
+    <td>Table no</td>
+    <td>Customer name</td>
+    <td>Help</td>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td> {{ forloop.counter }}</td>
+    <td>&nbsp;{{ i.TABLE.table_no }}</td>
+    <td>{{ i.USER.cust_name }}</td>
+    <td> {{ i.help }}</td>
+  </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

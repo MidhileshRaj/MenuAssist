@@ -1,0 +1,57 @@
+{% extends 'ADMIN/admin_index.html' %}
+{% block body %}
+<form action="/app/edit_staff_post/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-striped table-hover">
+  <tr>
+    <td width="108">User name</td>
+    <td width="381"><input name="name" type="text" value="{{ data.staff_name }}" class="form-control"/></td>
+  </tr>
+ 
+  <tr>
+    <td>Image</td>
+    <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control"/></td>
+  </tr>
+  <tr>
+    <td>Phone No</td>
+    <td><label for="textfield"></label>
+      <input type="text" value="{{ data.staffphone_no }}" name="textfield" id="textfield" class="form-control" required /></td>
+  </tr>
+  <tr>
+    <td>DOB</td>
+    <td><label for="textfield2"></label>
+      <input type="date" value="{{ data.staff_dob }}" name="textfield2" id="textfield2" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><label for="textfield3"></label>
+      <input type="text" value="{{ data.staff_email }}" name="textfield3" id="textfield3" class="form-control" required/></td>
+  </tr>
+  <tr>
+    <td>Place</td>
+    <td>
+      <input type="text" name="textfield4" value="{{ data.staff_place }}" id="textfield4" class="form-control" required/>
+    </td>
+  </tr>
+    <tr>
+    <td width="108">Post</td>
+    <td width="381"><input name="post" value="{{ data.staff_post }}" type="text" class="form-control" required /></td>
+  </tr>
+    <tr>
+    <td width="108">District</td>
+    <td width="381"><input name="district" value="{{ data.staff_district }}" type="text" class="form-control" required/></td>
+  </tr>
+    <tr>
+    <td width="108">Pincode</td>
+    <td width="381"><input name="pin" value="{{ data.staff_pincode }}" type="text" class="form-control" required/></td>
+  </tr>
+  <tr>
+  <td colspan="2"><div align="center">
+    <input name="" type="submit" value="Update" class="btn btn-success"/>
+  </div></td>
+  </tr>
+</table>
+</form>
+
+{% endblock %}
